@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akshitha N | Academic Portfolio</title>
+  <meta name="description" content="Academic Portfolio Blog of Akshitha N, 3rd-semester Computer Science and Engineering student at REVA University, Bengaluru.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-soft: #eff6ff;
+      --primary-border: #bfdbfe;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --max-width: 860px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Site Navigation */
+    .site-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.25rem;
+    }
+
+    .nav-links a {
+      font-size: 0.925rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.4rem 0.65rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      background-color: var(--primary-soft);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-page) 100%);
+      padding: 3.5rem 0 3rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.925rem;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+      border: 1px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-page);
+      border-color: #cbd5e1;
+      color: var(--text-main);
+    }
+
+    /* Section Structure */
+    .section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.015em;
+      margin-bottom: 1.5rem;
+    }
+
+    /* About Section */
+    .about-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .goal-box {
+      background-color: var(--primary-soft);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .goal-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .goal-text {
+      font-size: 0.975rem;
+      color: #1e3a8a;
+      line-height: 1.6;
+    }
+
+    /* Activities Section */
+    .activities-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .activity-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .activity-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .activity-desc {
+      font-size: 0.975rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 0.75rem;
+    }
+
+    .activity-desc:last-child {
+      margin-bottom: 0;
+    }
+
+    .repo-link-wrapper {
+      margin: 0.65rem 0 0.85rem 0;
+    }
+
+    .repo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary);
+      padding: 0.45rem 0.8rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      word-break: break-all;
+    }
+
+    .repo-link:hover {
+      background-color: #dbeafe;
+      color: var(--primary-hover);
+    }
+
+    /* Skills Section */
+    .skills-container {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      background-color: var(--bg-page);
+      border: 1px solid var(--border-color);
+      padding: 0.7rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.925rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .skill-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-intro {
+      font-size: 0.975rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0.9rem 1.2rem;
+      background-color: var(--bg-page);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      gap: 0.75rem;
+    }
+
+    .contact-info-label {
+      font-weight: 600;
+      font-size: 0.925rem;
+      color: var(--text-main);
+    }
+
+    .contact-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 2.25rem 0;
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .footer-sub {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 0.3rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 1.85rem;
+      }
+      .nav-links {
+        gap: 0.5rem;
+      }
+      .nav-links a {
+        font-size: 0.825rem;
+        padding: 0.3rem 0.4rem;
+      }
+      .about-card, .activity-card, .skills-container, .contact-card {
+        padding: 1.25rem;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#about" class="brand" id="brand-link">
+        <span class="brand-dot"></span>
+        Akshitha N
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about" id="nav-about">About</a></li>
+          <li><a href="#activities" id="nav-activities">Projects / Activities</a></li>
+          <li><a href="#skills" id="nav-skills">Skills</a></li>
+          <li><a href="#contact" id="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <header class="hero-section" id="hero">
+    <div class="container">
+      <h1 class="hero-title">Akshitha N</h1>
+      <p class="hero-subtitle">
+        3rd-semester Computer Science and Engineering student at REVA University, Bengaluru
+      </p>
+      <div class="hero-actions">
+        <a href="#activities" class="btn btn-primary" id="btn-hero-activities">View Activities</a>
+        <a href="https://github.com/Akshithag0wda" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-hero-github">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          GitHub Profile
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-card">
+          <p class="about-text">
+            I am a Computer Science and Engineering student developing my foundation in programming, problem-solving, version control, and software development. Through my coursework and practical activities, I have gained experience with C programming, Git and GitHub, collaborative development tools, and coding practice platforms. My current learning goal is to strengthen my programming and problem-solving fundamentals and gain more practical experience.
+          </p>
+          <div class="goal-box">
+            <div class="goal-label">Career / Learning Goal</div>
+            <p class="goal-text">
+              My goal is to strengthen my programming and problem-solving fundamentals and continue learning data structures, algorithms, databases, and software development tools as I progress through my Computer Science and Engineering degree.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects / Activities Section -->
+    <section class="section" id="activities">
+      <div class="container">
+        <h2 class="section-title">Projects / Activities</h2>
+        
+        <div class="activities-grid">
+          <!-- Activity 1 -->
+          <article class="activity-card" id="activity-1">
+            <h3 class="activity-title">Activity 1 – VS Code Setup</h3>
+            <p class="activity-desc">
+              I set up Visual Studio Code as my development environment and used it for programming work. I created and tested a basic Hello World C program and learned the basic workflow of creating, running, and verifying a simple program.
+            </p>
+          </article>
+
+          <!-- Activity 2 -->
+          <article class="activity-card" id="activity-2">
+            <h3 class="activity-title">Activity 2 – Git & GitHub Setup</h3>
+            <p class="activity-desc">
+              I learned the fundamentals of Git and GitHub and used them to maintain my Hello World C project. My public GitHub repository is:
+            </p>
+            <div class="repo-link-wrapper">
+              <a href="https://github.com/Akshithag0wda/Hello-world-c" target="_blank" rel="noopener noreferrer" class="repo-link" id="link-repo-helloworld">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                https://github.com/Akshithag0wda/Hello-world-c
+              </a>
+            </div>
+            <p class="activity-desc">
+              The repository contains the Hello World C program and README documentation.
+            </p>
+          </article>
+
+          <!-- Activity 3 -->
+          <article class="activity-card" id="activity-3">
+            <h3 class="activity-title">Activity 3 – GitLens & Live Share</h3>
+            <p class="activity-desc">
+              I used GitLens to explore Git history and blame information and used Live Share for pair programming. The Hello World project was extended with a greet() function and tested with greet("Ada"). I also maintained a Collaboration Log in the README.
+            </p>
+          </article>
+
+          <!-- Activity 4 -->
+          <article class="activity-card" id="activity-4">
+            <h3 class="activity-title">Activity 4 – LeetCode Practice Repository</h3>
+            <p class="activity-desc">
+              I created and maintained a GitHub repository for LeetCode coding practice:
+            </p>
+            <div class="repo-link-wrapper">
+              <a href="https://github.com/Akshithag0wda/leetcode-solutions" target="_blank" rel="noopener noreferrer" class="repo-link" id="link-repo-leetcode">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                https://github.com/Akshithag0wda/leetcode-solutions
+              </a>
+            </div>
+            <p class="activity-desc">
+              The repository contains documented coding solutions and progress related to beginner-level problem solving, including arrays, strings, basic algorithms, stacks, and linked lists.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        
+        <div class="skills-container">
+          <div class="skills-grid">
+            <div class="skill-item"><span class="skill-bullet"></span>C</div>
+            <div class="skill-item"><span class="skill-bullet"></span>Java</div>
+            <div class="skill-item"><span class="skill-bullet"></span>SQL</div>
+            <div class="skill-item"><span class="skill-bullet"></span>DBMS fundamentals</div>
+            <div class="skill-item"><span class="skill-bullet"></span>Arrays</div>
+            <div class="skill-item"><span class="skill-bullet"></span>Pointers</div>
+            <div class="skill-item"><span class="skill-bullet"></span>Dynamic memory allocation</div>
+            <div class="skill-item"><span class="skill-bullet"></span>File handling</div>
+            <div class="skill-item"><span class="skill-bullet"></span>Sequential search</div>
+            <div class="skill-item"><span class="skill-bullet"></span>Git</div>
+            <div class="skill-item"><span class="skill-bullet"></span>GitHub</div>
+            <div class="skill-item"><span class="skill-bullet"></span>VS Code</div>
+            <div class="skill-item"><span class="skill-bullet"></span>Basic algorithmic problem-solving</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-card">
+          <p class="contact-intro">
+            GitHub profile and repository links:
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-row">
+              <span class="contact-info-label">GitHub Profile</span>
+              <a href="https://github.com/Akshithag0wda" target="_blank" rel="noopener noreferrer" class="contact-link" id="contact-github-profile">
+                https://github.com/Akshithag0wda
+              </a>
+            </div>
+
+            <div class="contact-row">
+              <span class="contact-info-label">Hello World C Repository</span>
+              <a href="https://github.com/Akshithag0wda/Hello-world-c" target="_blank" rel="noopener noreferrer" class="contact-link" id="contact-repo-helloworld">
+                https://github.com/Akshithag0wda/Hello-world-c
+              </a>
+            </div>
+
+            <div class="contact-row">
+              <span class="contact-info-label">LeetCode Practice Repository</span>
+              <a href="https://github.com/Akshithag0wda/leetcode-solutions" target="_blank" rel="noopener noreferrer" class="contact-link" id="contact-repo-leetcode">
+                https://github.com/Akshithag0wda/leetcode-solutions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">
+        <strong>Akshitha N</strong> &bull; 3rd-Semester Computer Science and Engineering &bull; REVA University, Bengaluru
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
